@@ -1,0 +1,196 @@
+<div class="jumbotron">
+    <div class="conatiner">
+        <div class="row">
+            <div class="col-md-6 offset-md-3" *ngIf="regForm">
+            <h3> Registration  Angular 17 Reactive forms  with validation </h3>
+
+            <form  [formGroup]="signUpform" (ngSubmit)="onSubmitSignUp()" >
+                <div class="form-group">
+                    <label >Name</label>
+                    <input type="text"class="form-control" formControlName="name">
+                    <div class="form-text text-danger" *ngIf="name?.errors?.['required'] && name?.touched">
+                        First name is Required
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Mobile Number</label>
+                    <input type="text"class="form-control" formControlName="mobNumber">
+                    <div class="form-text text-danger" *ngIf="mobNumber?.errors?.['required'] && mobNumber?.touched">
+                        Mobile No  is Required
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Enter Your age</label>
+                    <input type="number"class="form-control" formControlName="age">
+                    <div class="form-text text-danger" *ngIf="age?.errors?.['required'] && age?.touched">
+                        Age  is Required
+                    </div>
+                </div>
+               
+                <div class="form-group">
+                    <label>Enter your Dob</label>
+                    <input type="date"class="form-control" formControlName="dob">
+                    <div class="form-text text-danger" *ngIf="dob?.errors?.['required'] && dob?.touched">
+                        DOB is Required
+                    </div>
+                </div>
+                <!-- ---------------------------------------new rows -->
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>Email</label>
+                        <input type="email" class="form-control" placeholder="abasahebshelvane@gmail.com" formControlName="email" >
+                        <div class="form-text text-danger" *ngIf="email?.errors?.['required'] && email?.touched">
+                            Email is Required
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label>Password</label>
+                        <input type="password" class="form-control" placeholder="Enter your password" formControlName="password" >
+                        <div class="form-text text-danger" *ngIf="password?.errors?.['required'] && password?.touched">
+                            Password is Required
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>AddressLine1</label>
+                        <input type="text" class="form-control" placeholder="12,4" formControlName="addLine1" >
+                        <div class="form-text text-danger" *ngIf="addLine1?.errors?.['required'] && addLine1?.touched">
+                            Password is Required
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>AddressLine2</label>
+                        <input type="text" class="form-control" placeholder="12,4" formControlName="addLine2" >
+                        <div class="form-text text-danger" *ngIf="addLine2?.errors?.['required'] && addLine2?.touched">
+                            Address2 is Required
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>city</label>
+                        <input type="text" class="form-control" placeholder="Enter your city" formControlName="city" >
+                        <div class="form-text text-danger" *ngIf="city?.errors?.['required'] && city?.touched">
+                            City is Required
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>state</label>
+                        <select id="inputstate" class="form-control"  formControlName="state" > 
+                            <option value="">choose ...</option>
+                            <option >...</option>
+                        </select>
+                        <div class="form-text text-danger" *ngIf="state?.errors?.['required'] && state?.touched">
+                            state is Required
+                        </div>
+                    </div>
+                    
+                    <div class="form-group col-md-2">
+                        <label>zipcode</label>
+                        <input type="text" class="form-control" placeholder="Enter your city" formControlName="zipCode" >
+                        <div class="form-text text-danger" *ngIf="zipCode?.errors?.['required'] && zipCode?.touched">
+                            Zipcode  is Required
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>language</label>
+                    <select multiple class="form-control" formControlName="language" >
+                        <option >Marathi</option>
+                        <option >Hindi</option>
+                        <option >English</option>
+                        <option >others</option>
+                    </select>
+
+                    <div class="form-text text-danger" *ngIf="language?.errors?.['required'] && language?.touched">
+                        Language is Required
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Gender</label> 
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-inline" formControlName="gender" value="male"> 
+                        <label  class="form-check-inline">male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-inline" formControlName="gender" value="femmale"> 
+                        <label  class="form-check-inline">Female</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-inline" formControlName="gender" value="others"> 
+                        <label  class="form-check-inline">Others</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Something about you</label>
+                   <textarea  class="form-control" rows="3" formControlName="aboutYou"> </textarea>
+                   <div class="form-text text-danger" *ngIf="aboutYou?.errors?.['required'] && aboutYou?.touched">
+                    About  is Required
+                </div>
+                </div>
+
+                <div class="form-group">
+                    <label>upload your photo</label>
+                   <input type="file"  class="form-control"  formControlName="uploadPhoto"> 
+
+                   <div class="form-text text-danger" *ngIf="uploadPhoto?.errors?.['required'] && uploadPhoto?.touched">
+                    File is  is Required
+                </div>
+                </div>
+
+                <div class="form-group">
+                    
+                   <input type="checkbox"  class="form-check-inline"  formControlName="agreetc" id="agreetc"> 
+                   <label  class="form-check-inline">Terms and condition</label>
+                   <div class="form-text text-danger" *ngIf="agreetc?.errors?.['required'] && agreetc?.touched">
+                    agreetc is Required
+                </div>
+                </div>
+
+                <div class="form-group ">
+                    <label>Waht do u want ?..</label>
+                    <select  class="form-control"  formControlName="role" > 
+                        <option value="seller">seller</option>
+                        <option value="buyer">buyer</option>
+                    </select>
+                    <div class="form-text text-danger" *ngIf="role?.errors?.['required'] && role?.touched">
+                        Role is Required
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary"> Register </button>
+                </div>
+            </form>
+            <p class="sim-pointer" routerLink="/sign-in">Already have an account click here to login</p>
+        </div>
+        <div class="col-md-6 offset-md-3" *ngIf="!regForm">
+            <h3>Login  Angular 17 template driven forms with validation</h3>
+
+            <form #tf="ngForm" (ngSubmit)="tf.form.valid && onSubmitSignIn()" novalidate>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" name="userEmail"  [(ngModel)]="signInFormValue.userEmail" #userEmail="ngModel" required email>
+                    <span class="help-bpx" *ngIf="tf.touched && !tf.valid"> Please Enter email value</span>
+
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password" [(ngModel)]="signInFormValue.userPassword" #userPassword="ngModel" required togglePassword>
+                    <span class="help-bpx" *ngIf="tf.touched && !tf.valid"> Please Enter password value</span>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" [disabled]="!tf.valid">Login</button>
+                </div>
+            </form>
+            <p class="sim-pointer" routerLink="/sign-up">don’t have an accout clieck here to register</p>
+        </div>
+        </div>
+    </div>
+</div>

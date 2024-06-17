@@ -1,0 +1,118 @@
+
+<br>
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <form  [formGroup]="userProfileForm" (ngSubmit)="updateProfile()" >
+                    <div class="form-group">
+                        <label >Name</label>
+                        <input type="text"class="form-control" formControlName="name">
+                    </div>
+    
+                    <div class="form-group">
+                        <label>Mobile Number</label>
+                        <input type="text"class="form-control" formControlName="mobNumber">
+                    </div>
+    
+                    <div class="form-group">
+                        <label>Enter Yoour age</label>
+                        <input type="number"class="form-control" formControlName="age">
+                    </div>
+                   
+                    <div class="form-group">
+                        <label>Enter your Dob</label>
+                        <input type="date"class="form-control" formControlName="dob">
+                    </div>
+                    <!-- ---------------------------------------new rows -->
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Email</label>
+                            <input type="email" class="form-control" placeholder="abasahebshelvane@gmail.com" formControlName="email" >
+                        </div>
+    
+                        <div class="form-group col-md-6">
+                            <label>Password</label>
+                            <input type="password" class="form-control" placeholder="Enter your password" formControlName="password" >
+                        </div>
+    
+                        <div class="form-group">
+                            <label>AddressLine1</label>
+                            <input type="text" class="form-control" placeholder="12,4" formControlName="addLine1" >
+                        </div>
+                        <div class="form-group">
+                            <label>AddressLine2</label>
+                            <input type="text" class="form-control" placeholder="12,4" formControlName="addLine2" >
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>city</label>
+                            <input type="text" class="form-control" placeholder="Enter your city" formControlName="city" >
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label>state</label>
+                            <select id="inputstate" class="form-control"  formControlName="state" > 
+                                <option value="">choose ...</option>
+                                <option >Maharastra</option>
+                                <option >UP</option>
+                                <option >MP</option>
+                                <option >HP</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group col-md-2">
+                            <label>zipcode</label>
+                            <input type="text" class="form-control" placeholder="Enter your city" formControlName="zipCode" >
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label>language</label>
+                        <select multiple class="form-control" formControlName="language" >
+                            <option >Marathi</option>
+                            <option >Hindi</option>
+                            <option >English</option>
+                            <option >others</option>
+                        </select>
+                    </div>
+    
+                    <div class="form-group">
+                        <label>Gender</label> 
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-inline" formControlName="gender" value="male"> 
+                            <label  class="form-check-inline">male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-inline" formControlName="gender" value="femmale"> 
+                            <label  class="form-check-inline">Female</label>
+                        </div>
+    
+                        <div class="form-check form-check-inline">
+                            <input type="radio" class="form-check-inline" formControlName="gender" value="others"> 
+                            <label  class="form-check-inline">Others</label>
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label>Something about you</label>
+                       <textarea  class="form-control" rows="3" formControlName="aboutYou"> </textarea>
+                    </div>
+    
+                    <div class="form-group">
+                        <label>upload your photo</label>
+                       <input type="file"  class="form-control"  formControlName="uploadPhoto"> 
+                    </div>
+    
+                
+                    
+                    <div class="form-group">
+                        <button class="btn btn-primary" > Update your Profile </button>
+                        <!-- <button class="btn btn-primary" data-bs-dismiss="modal" (click)="updateUser()" *ngIf="edit_User"> Update User </button> -->
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
